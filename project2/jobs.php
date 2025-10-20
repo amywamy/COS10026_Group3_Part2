@@ -63,4 +63,8 @@
             } else {
                 echo "<p> Currently there isn't any open position available yet, please check back regularly. </p>";
             }
-        }
+        } 
+        ?>
+        </section>
+    </main>
+    <?php include 'footer.inc'; ?>
