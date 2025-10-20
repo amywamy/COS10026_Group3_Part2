@@ -1,4 +1,4 @@
-<!-- navigation of the header -->
+<!-- navigation of the header, amy -->
 <nav aria-label="Primary navigation" class="main-nav">
             <ul>
                 <li><a href="index.php"<?php if(basename($_SERVER['PHP_SELF']) == 'index.php') echo 'class="active"'; ?>>Home</a></li>
