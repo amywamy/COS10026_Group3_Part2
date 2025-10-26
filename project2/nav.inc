@@ -1,11 +1,16 @@
 <!-- navigation of the header, amy -->
-<nav aria-label="Primary navigation" class="main-nav">
-            <ul>
-                <li><a href="index.php"<?php if(basename($_SERVER['PHP_SELF']) == 'index.php') echo 'class="active"'; ?>>Home</a></li>
-                <li><a href="jobs.php"<?php if(basename($_SERVER['PHP_SELF']) == 'jobs.php') echo 'class="active"'; ?>>Available position</a></li>
-                <li><a href="apply.php"<?php if(basename($_SERVER['PHP_SELF']) == 'apply.php') echo 'class="active"'; ?>>Apply Now</a></li>
-                <li><a href="about.php"<?php if(basename($_SERVER['PHP_SELF']) == 'about.php') echo 'class="active"'; ?>>About Us</a></li>
-                <li><a href="https://www.swinburne.edu.au/student-login/" target="_blank" rel="noopener noreferrer">Log
-                        In</a></li>
-            </ul>
-        </nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDLRC Careers</title>
+    <link rel="stylesheet" href="styles/style.css"> <!-- Ensure path is correct -->
+</head>
+<body>
+    <header class="header" role="banner">
+        <div class="logo-title">
+            <img src="images_index/Website_logo.png" alt="SDLRC Logo" class="logo-icon">
+            <h1>SDLRC</h1>
+            <p>Digital Careers for the Smart Future</p>
+        </div>
