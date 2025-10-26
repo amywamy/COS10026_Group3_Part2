@@ -1,0 +1,78 @@
+/* Styling for Job Page*/
+.jobs {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: darkblue;
+    margin: 2rem auto;
+    max-width: 1000px;
+    padding: 1rem;
+}
+
+.job-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.job-card {
+    border: 1.2px solid #ccc;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+    box-shadow: 0 2px 5px rbga(0,0,0,0.09);
+    padding: 1.6rem;
+}
+
+.job-card h3 {
+  font-size: 1.4rem;
+  color: #003366;
+}
+
+.job-code {
+  color: #0073e6;
+  font-weight: bold;
+}
+
+.badge {
+  background: #0073e6;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.job-summary {
+  margin: 0.5rem 0 1rem 0;
+  color: #333;
+}
+
+.job-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.job-meta li {
+  margin-bottom: 0.3rem;
+}
+
+details {
+  margin-bottom: 1rem;
+}
+
+details summary {
+  font-weight: bold;
+  cursor: pointer;
+  color: #003366;
+}
+
+.apply-btn {
+  display: inline-block;
+  background: #0073e6;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.apply-btn:hover {
+  background: #005bb5;
+}
