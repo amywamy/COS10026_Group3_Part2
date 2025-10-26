@@ -3,8 +3,11 @@
  include 'header.inc';
  include 'settings.inc';
  include 'nav.inc';
- $query = "SELECT FROM * jobs";
+ $query = "SELECT * FROM * jobs";
  $result = mysqli_query($conn, $query);
+ $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
+if (!$conn) {
+    die("<p>Database connection failure: " . mysqli_connect_error() . "</p>");
  ?>
 
  <main id="jobs-main" class="jobs">
@@ -35,54 +38,48 @@
         <?php
         //Adding database settings from jobs table into the page display;
         $query = "SHOW TABLES LIKE 'jobs'";
-        $table_exists = mysqli_query($conn, $query);
+$table_exists = mysqli_query($conn, $query);
 
-        if($table_exists && myslqi_num_rows($table_exists) > 0) {
-            $jobs = mysqli_query($conn, "SELECT * FROM jobs ORDER BY job_id ASC");
-             if ($jobs && mysqli_num_rows($jobs) > 0) {
-                while ($row = mysqli_fetch_assoc($jobs)) {
-                    echo "<article class='job' aria-labelledby='ref-{$row['job_code']}'>
-                        <header>
-                            <h3 id='ref-{$row['job_code']}'>
-                                " . htmlspecialchars($row['job_code']) . " - " . htmlspecialchars($row['title']) . "
-                                <span class='badge'>" . htmlspecialchars($row['status_badge']) . "</span>
-                            </h3>
-                            <p>" . htmlspecialchars($row['description']) . "</p>
-                            <ul class='meta'>
-                                <li>" . htmlspecialchars($row['employment_type']) . "</li>
-                                <li>Salary: " . htmlspecialchars($row['salary_range']) . "</li>
-                                <li>Reports to: " . htmlspecialchars($row['reports_to']) . "</li>
-                            </ul>
-                        </header>
+if ($table_exists && mysqli_num_rows($table_exists) > 0) {
+    $jobs = mysqli_query($conn, "SELECT * FROM jobs ORDER BY job_code ASC");
 
-                        <details class='collapsible'>
-                            <summary>Key Responsibilities (unordered list):</summary>
-                            <ul>";
-                            $responsibilities = explode("\n", $row['key_responsibilities']);
-                    foreach ($responsibilities as $item) {
-                        echo "<li>" . htmlspecialchars(trim($item)) . "</li>";
-                    }
-
-                    echo "</ul>
-                        </details>
-
-                        <details class='collapsible'>
-                            <summary>Requirements for the position to be considered (ordered list):</summary>
-                            <ol>";
-
-                    $requirements = explode("\n", $row['requirements']);
-                    foreach ($requirements as $req) {
-                        echo "<li>" . htmlspecialchars(trim($req)) . "</li>";
-                    }
-
-                    echo "</ol>
-                            <p class='meta'>Preferable: " . htmlspecialchars($row['preferable']) . "</p>
-                        </details>
-                    </article>";
-                }
-            } else {
-                echo "<p> Currently there isn't any open position available yet, please check back regularly. </p>";
+    if ($jobs && mysqli_num_rows($jobs) > 0) {
+        while ($row = mysqli_fetch_assoc($jobs)) {
+            echo "<article class='job' aria-labelledby='ref-{$row['job_code']}'>
+                <header>
+                    <h3 id='ref-{$row['job_code']}'>" . htmlspecialchars($row['job_code']) . " - " . htmlspecialchars($row['title']) . " 
+                        <span class='badge'>" . htmlspecialchars($row['status_badge']) . "</span></h3>
+                    <p>" . htmlspecialchars($row['description']) . "</p>
+                    <ul class='meta'>
+                        <li>" . htmlspecialchars($row['employment_type']) . "</li>
+                        <li>Salary: " . htmlspecialchars($row['salary_range']) . "</li>
+                        <li>Reports to: " . htmlspecialchars($row['reports_to']) . "</li>
+                    </ul>
+                </header>
+                <details class='collapsible'>
+                    <summary>Key Responsibilities</summary>
+                    <ul>";
+            foreach (explode("\n", $row['key_responsibilities']) as $r) {
+                echo "<li>" . htmlspecialchars(trim($r)) . "</li>";
             }
+            echo "</ul></details>
+                <details class='collapsible'>
+                    <summary>Requirements</summary>
+                    <ol>";
+            foreach (explode("\n", $row['requirements']) as $req) {
+                echo "<li>" . htmlspecialchars(trim($req)) . "</li>";
+            }
+            echo "</ol>
+                    <p class='meta'>Preferable: " . htmlspecialchars($row['preferable']) . "</p>
+                </details>
+            </article>";
+        }
+    } else {
+        echo "<p>No jobs available right now.</p>";
+    }
+} else {
+    echo "<p>The 'jobs' table does not exist in your database.</p>";
+}
         } else {
             //fallback if there isn't any data available yet, can be use for testing purposes
             ?>
