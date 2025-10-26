@@ -30,6 +30,18 @@ if (!$conn) {
                    Digital Literacies and Teaching at Swinburne
                 </a>
             </li>
+            <li>
+                <a rel="noopener" target="_blank"
+                   href="https://www.swinburne.edu.au/news/2020/09/swinburne-learning-and-adapting-in-a-changing-world/">
+                   Learning and Adapting in a changing world
+                </a>
+            </li>
+            <li>
+                <a rel="noopener" target="_blank"
+                   href="https://www.swinburne.edu.au/news/2020/06/student-adobe-digital-coaches-are-using-storytelling-to-improve-digital-literacy/">
+                   Adobe Digital Coaches Storytelling
+                </a>
+            </li>
         </ol>
         <p class="meta">Applications open now until <time datetime="2025-11-07">7th of November 2025</time>.</p>
     </aside>
