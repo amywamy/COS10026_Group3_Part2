@@ -38,30 +38,46 @@
         $table_exists = mysqli_query($conn, $query);
 
         if($table_exists && myslqi_num_rows($table_exists) > 0) {
-            $jobs = mysqli_query($conn, "SELECT * FROM jobs ORDER BY job_ref ASC");
-            if ($jobs && myslqi_num_rows($jobs) > 0) {
+            $jobs = mysqli_query($conn, "SELECT * FROM jobs ORDER BY job_id ASC");
+             if ($jobs && mysqli_num_rows($jobs) > 0) {
                 while ($row = mysqli_fetch_assoc($jobs)) {
-                    echo "<article class='job' aria-labelledby='ref-{$row['job_ref']}';
-                    <header>
-                    <h3 id='ref-{$row['job_ref']}'>
-                    {$row['job_ref']} - " . htmlspecialchars($row[job_title]) . " <span class='badge'>" . htmlspecialchars($row['job_level']) . "</span>
-                    </h3>
-                    <p>". htmlspecialchars($row['job_summary']) . "</p>
-                    <ul class='meta'>
-                    <li>" . htmlspecialchars($row['job_type']) . "</li>
-                    <li>Salary: " . htmlspecialchars($row['salary_range']) . "</li>
-                    <li>Reports to: " . htmlspecialchars($row['report_to']) . "</li>
-                    </ul>
-                    </header>
-                    <details class='collapsible'>
-                    <summary>Key Responsibilities</summary>
-                    <ul>" . htmlspecialchars($row['responsibilities']) . "</ul>
-                    </details>
-                    <details class='collapsible'>
-                    <summary>Position Requirements</summary>
-                    <ol>" . htmlspecialchars($row['requirements']) . "</ol>
-                    <p class='meta'>Preferable: " . htmlspecialchars($row['preferable']) . "</p>
-                    </details>
+                    echo "<article class='job' aria-labelledby='ref-{$row['job_code']}'>
+                        <header>
+                            <h3 id='ref-{$row['job_code']}'>
+                                " . htmlspecialchars($row['job_code']) . " - " . htmlspecialchars($row['title']) . "
+                                <span class='badge'>" . htmlspecialchars($row['status_badge']) . "</span>
+                            </h3>
+                            <p>" . htmlspecialchars($row['description']) . "</p>
+                            <ul class='meta'>
+                                <li>" . htmlspecialchars($row['employment_type']) . "</li>
+                                <li>Salary: " . htmlspecialchars($row['salary_range']) . "</li>
+                                <li>Reports to: " . htmlspecialchars($row['reports_to']) . "</li>
+                            </ul>
+                        </header>
+
+                        <details class='collapsible'>
+                            <summary>Key Responsibilities (unordered list):</summary>
+                            <ul>";
+                            $responsibilities = explode("\n", $row['key_responsibilities']);
+                    foreach ($responsibilities as $item) {
+                        echo "<li>" . htmlspecialchars(trim($item)) . "</li>";
+                    }
+
+                    echo "</ul>
+                        </details>
+
+                        <details class='collapsible'>
+                            <summary>Requirements for the position to be considered (ordered list):</summary>
+                            <ol>";
+
+                    $requirements = explode("\n", $row['requirements']);
+                    foreach ($requirements as $req) {
+                        echo "<li>" . htmlspecialchars(trim($req)) . "</li>";
+                    }
+
+                    echo "</ol>
+                            <p class='meta'>Preferable: " . htmlspecialchars($row['preferable']) . "</p>
+                        </details>
                     </article>";
                 }
             } else {
