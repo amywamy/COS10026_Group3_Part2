@@ -1,7 +1,7 @@
 <!-- jobs.php -->
 <?php
-include 'header.inc';
-include 'settings.inc';
+include_once 'header.inc';
+include_once 'settings.php';
 
 $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
 if (!$conn) {
@@ -41,9 +41,6 @@ if (!$conn) {
         <?php
         $query = "SELECT * FROM jobs ORDER BY job_code ASC";
         $result = mysqli_query($conn, $query);
-        echo "<pre>";
-        print_r(mysqli_fetch_all($result, MYSQLI_ASSOC));
-        echo "</pre>";
         if (!$result) {
             echo "<p> Query failed: " . mysqli_error($conn) . "</p>";
         } elseif (mysqli_num_rows($result) === 0) {
