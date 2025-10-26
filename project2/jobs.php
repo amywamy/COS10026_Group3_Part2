@@ -10,6 +10,10 @@ if (!$conn) {
 ?>
 
 <main id="jobs" class="jobs">
+    <style>
+    body { background-color: #fefefe; }
+    </style>
+    
     <a href="#jobs" class="visually-hidden">Skip to main content of this page</a>
     <aside aria-labelledby="join-us">
         <h2 id="join-us">Why should you consider joining us at SDLRC?</h2>
@@ -28,6 +32,18 @@ if (!$conn) {
                 <a rel="noopener" target="_blank"
                    href="https://www.swinburne.edu.au/about/strategy-initiatives/learning-teaching-at-swinburne/digital-literacies/">
                    Digital Literacies and Teaching at Swinburne
+                </a>
+            </li>
+            <li>
+                <a rel="noopener" target="_blank"
+                   href="https://www.swinburne.edu.au/news/2020/09/swinburne-learning-and-adapting-in-a-changing-world/">
+                   Learning and Adapting in a changing world
+                </a>
+            </li>
+            <li>
+                <a rel="noopener" target="_blank"
+                   href="https://www.swinburne.edu.au/news/2020/06/student-adobe-digital-coaches-are-using-storytelling-to-improve-digital-literacy/">
+                   Adobe Digital Coaches Storytelling
                 </a>
             </li>
         </ol>

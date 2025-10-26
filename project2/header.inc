@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo-title">
-            <img src="../images/website_logo.png" alt="SDLRC Logo" class="logo-icon">
-            <h1>SDLRC</h1>
-            <p>Digital Careers for the Smart Future</p>
-        </div>
-        <?php include 'nav.inc'; ?>
-    </header>
+    <header class="site-header" role="banner">
+  <div class="header-logo-row">
+    <!-- Left: Logo -->
+    <div class="logo-wrapper">
+      <img src="../images/website_logo.png" alt="SDLRC Logo" class="logo-icon">
+    </div>
+
+    <div class="header-text">
+      <h1>SDLRC</h1>
+      <p>Digital Careers for the Smart Future</p>
+    </div>
+       </header>
+<?php include 'nav.inc'; ?>
