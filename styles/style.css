@@ -305,11 +305,11 @@ details ol {
 }
 
 /* Login page layout */
-#admin-login.body {
+body#admin-login {
   font-family: "Poppins", Arial, sans-serif;
   background: 
-    linear-gradient(rgba(0, 38, 77, 0.7), rgba(0, 75, 135, 0.7)),
-    url("../images/login.png") no-repeat center center fixed;
+    linear-gradient(rgba(0, 30, 60, 0.6), rgba(0, 75, 135, 0.7)),
+    url("../images/login.jpg") no-repeat center center fixed;
   background-size: cover;
   color: #333;
   height: 100vh;
@@ -320,7 +320,6 @@ details ol {
   animation: fadeIn 1.5s ease-in;
 }
 
-/* Container */
 .login-container {
   display: flex;
   justify-content: center;
@@ -328,7 +327,6 @@ details ol {
   width: 100%;
 }
 
-/* Login box */
 .login-box {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 2.5rem 3rem;
@@ -339,7 +337,6 @@ details ol {
   max-width: 420px;
 }
 
-/* Logo */
 .logo {
   width: 100px;
   height: 100px;
@@ -353,7 +350,6 @@ details ol {
   transform: scale(1.05);
 }
 
-/* Headings */
 h1 {
   color: #00264d;
   margin-bottom: 0.3rem;
@@ -366,7 +362,6 @@ h1 {
   margin-bottom: 2rem;
 }
 
-/* Input fields */
 .input-group {
   text-align: left;
   margin-bottom: 1rem;
@@ -395,7 +390,6 @@ input:focus {
   outline: none;
 }
 
-/* Button */
 .login-btn {
   background-color: #00264d;
   color: #fff;
@@ -413,13 +407,6 @@ input:focus {
 .login-btn:hover {
   background-color: #004b87;
   transform: scale(1.03);
-}
-
-/* Footer text */
-.footer-text {
-  margin-top: 2rem;
-  font-size: 0.85rem;
-  color: #777;
 }
 
 /* Animation */
