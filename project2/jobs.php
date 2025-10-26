@@ -1,20 +1,17 @@
-<!-- jobs page, amy -->
+<!-- jobs.php -->
 <?php
 include 'header.inc';
-include 'settings.inc';
-include 'nav.inc';
+include 'settings.inc'; // ensures $conn created
 
 $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
-
 if (!$conn) {
-    die("<p>Database connection failed: " . mysqli_connect_error() . "</p>");
+    die("<p>❌ Database connection failed: " . mysqli_connect_error() . "</p>");
 }
 ?>
 
 <main id="jobs-main" class="jobs">
     <a href="#jobs-main" class="visually-hidden">Skip to main content of this page</a>
 
-    <!-- Sidebar -->
     <aside aria-labelledby="join-us">
         <h2 id="join-us">Why should you consider joining us at SDLRC?</h2>
         <p>
@@ -35,26 +32,22 @@ if (!$conn) {
                 </a>
             </li>
         </ol>
-        <p class="meta">Applications open now until 
-            <time datetime="2025-11-07">7th of November 2025</time>.
-        </p>
+        <p class="meta">Applications open now until <time datetime="2025-11-07">7th of November 2025</time>.</p>
     </aside>
 
-    <!-- Main Job Listing Section -->
     <section class="job-listing">
         <h2 id="open-roles">Open Positions</h2>
 
         <?php
         $query = "SELECT * FROM jobs ORDER BY job_code ASC";
-        $jobs = mysqli_query($conn, $query);
+        $result = mysqli_query($conn, $query);
 
-        if (!$jobs) {
-            echo "<p>Query failed: " . mysqli_error($conn) . "</p>";
-        } elseif (mysqli_num_rows($jobs) == 0) {
-            // Table exists but no jobs available
-            echo "<p>Currently there aren't any open positions available yet. Please check back soon.</p>";
+        if (!$result) {
+            echo "<p>❌ Query failed: " . mysqli_error($conn) . "</p>";
+        } elseif (mysqli_num_rows($result) === 0) {
+            echo "<p>⚠️ No jobs found in the database.</p>";
         } else {
-            while ($row = mysqli_fetch_assoc($jobs)) {
+            while ($row = mysqli_fetch_assoc($result)) {
                 echo "<article class='job' aria-labelledby='ref-{$row['job_code']}'>
                     <header>
                         <h3 id='ref-{$row['job_code']}'>" . htmlspecialchars($row['job_code']) . " - " . htmlspecialchars($row['title']) . "
@@ -62,45 +55,39 @@ if (!$conn) {
                         </h3>
                         <p>" . htmlspecialchars($row['description']) . "</p>
                         <ul class='meta'>
-                            <li>" . htmlspecialchars($row['employment_type']) . "</li>
+                            <li>Type: " . htmlspecialchars($row['employment_type']) . "</li>
                             <li>Salary: " . htmlspecialchars($row['salary_range']) . "</li>
                             <li>Reports to: " . htmlspecialchars($row['reports_to']) . "</li>
+                            <li>Deadline: " . htmlspecialchars($row['application_deadline']) . "</li>
                         </ul>
                     </header>
 
-                    <details class='collapsible'>
-                        <summary>Key Responsibilities (unordered list):</summary>
+                    <details>
+                        <summary>Key Responsibilities</summary>
                         <ul>";
-
                 $responsibilities = explode("\n", $row['key_responsibilities']);
-                foreach ($responsibilities as $resp) {
-                    if (trim($resp) !== "") {
-                        echo "<li>" . htmlspecialchars(trim($resp)) . "</li>";
-                    }
+                foreach ($responsibilities as $r) {
+                    if (trim($r) !== "") echo "<li>" . htmlspecialchars(trim($r)) . "</li>";
                 }
-
                 echo "</ul>
                     </details>
 
-                    <details class='collapsible'>
-                        <summary>Requirements for the position to be considered (ordered list):</summary>
+                    <details>
+                        <summary>Requirements</summary>
                         <ol>";
                 $requirements = explode("\n", $row['requirements']);
                 foreach ($requirements as $req) {
-                    if (trim($req) !== "") {
-                        echo "<li>" . htmlspecialchars(trim($req)) . "</li>";
-                    }
+                    if (trim($req) !== "") echo "<li>" . htmlspecialchars(trim($req)) . "</li>";
                 }
-
                 echo "</ol>
-                        <p class='meta'>Preferable: " . htmlspecialchars($row['preferable']) . "</p>
+                        <p><strong>Preferable:</strong> " . htmlspecialchars($row['preferable']) . "</p>
                     </details>
 
-                    <!-- Optional Apply Button -->
                     <p><a class='apply-btn' href='apply.php?job_code=" . urlencode($row['job_code']) . "'>Apply Now</a></p>
                 </article>";
             }
         }
+
         mysqli_close($conn);
         ?>
     </section>
