@@ -1,6 +1,10 @@
 <!-- jobs page, amy -->
  <?php
  include 'header.inc';
+ include 'settings.inc';
+ include 'nav.inc';
+ $query = "SELECT FROM * jobs";
+ $result = mysqli_query($conn, $query);
  ?>
 
  <main id="jobs-main" class="jobs">
