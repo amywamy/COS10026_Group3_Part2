@@ -1,178 +1,267 @@
+:root {
+  --primary: #00264d;
+  --secondary: #005bb5;
+  --accent: #f0f4fa;
+  --text: #1a1a1a;
+  --muted: #555;
+  --bg: #fafafa;
+  --radius: 12px;
+  --shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
 
-.jobs {
-  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-  color: #1a1a1a;
+.site-header {
+  background-color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* logo + text horizontally aligned, centered */
+.header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.logo-icon {
+  width: 90px;
+  height: auto;
+  object-fit: contain;
+}
+
+.header-text h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #00264d;
+  margin: 0;
+}
+
+.header-text p {
+  color: #555;
+  font-size: 1rem;
+  margin: 0.2rem 0 0;
+}
+
+.navbar {
+  background-color: #00264d;
+  padding: 0.8rem 0;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
   max-width: 1200px;
-  margin: 2rem auto;
-  padding: 1rem 2rem;
-  background: #fafafa;
+  padding: 0;
 }
 
-.jobs h2, .jobs h3 {
-  color: #003366;
-  font-weight: 600;
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
 }
 
-#open-roles {
-  border-bottom: 3px solid #004b87;
-  padding-bottom: 0.5rem;
-  margin-bottom: 2rem;
-  font-size: 1.8rem;
+.nav-menu a:hover {
+  background-color: #004b87;
+  border-radius: 4px;
 }
 
+@media (max-width: 900px) {
+  .header-logo {
+    flex-direction: column;
+  }
+
+  .logo-icon {
+    width: 70px;
+  }
+
+  .header-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Job section layout */
+.jobs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1300px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+}
+
+/* Sidebar (Why Join Us) */
+.jobs aside {
+  flex: 1 1 300px;
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  align-self: flex-start;
+}
+
+.jobs aside h2 {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.jobs aside ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+}
+
+.jobs aside a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.jobs aside a:hover {
+  text-decoration: underline;
+}
+
+/* Job listings column */
 .job-container {
+  flex: 2 1 600px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
-/* Individual job card */
+/* Job card */
 .job-card {
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 1.8rem;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
+  background: white;
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .job-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
 }
 
-/* Header area */
+/* Job header */
 .job-card header {
-  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.75rem;
   margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
 }
 
 .job-card h3 {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
+  color: var(--primary);
   margin: 0;
-  color: #00264d;
 }
 
 .job-code {
-  color: #0073e6;
-  font-weight: 700;
+  font-weight: 600;
+  color: var(--secondary);
 }
 
 .badge {
-  background: #004b87;
+  background: var(--secondary);
   color: #fff;
-  border-radius: 6px;
-  padding: 0.25rem 0.6rem;
   font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 5px;
   margin-left: 0.5rem;
-  display: inline-block;
 }
 
-/* Job metadata */
+/* Job description */
 .job-summary {
-  color: #333;
-  margin-top: 0.5rem;
-  line-height: 1.6;
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
 }
 
+/* Job meta */
 .job-meta {
   list-style: none;
   padding: 0;
-  margin: 1rem 0;
-  font-size: 0.95rem;
+  margin: 0 0 1.5rem 0;
 }
 
 .job-meta li {
   padding: 0.25rem 0;
+  color: #333;
 }
 
 .job-meta strong {
-  color: #004b87;
+  color: var(--primary);
 }
 
-/* Collapsible details */
+/* Collapsible sections */
 details {
-  margin: 0.75rem 0;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  background: var(--accent);
+  border-radius: var(--radius);
   padding: 0.75rem 1rem;
-  background: #f9fafc;
+  margin-bottom: 1rem;
 }
 
 details summary {
   cursor: pointer;
   font-weight: 600;
-  color: #003366;
+  color: var(--primary);
 }
 
-details ul, details ol {
-  margin: 0.75rem 0 0 1.5rem;
-  line-height: 1.6;
+details ul,
+details ol {
+  margin-left: 1.5rem;
+  color: var(--muted);
 }
 
-/* Apply button */
+/* Apply Button */
 .apply-btn {
   display: inline-block;
-  margin-top: 1rem;
-  background: #004b87;
-  color: #fff;
-  padding: 0.7rem 1.2rem;
+  background: var(--secondary);
+  color: white;
+  padding: 0.7rem 1.4rem;
   border-radius: 6px;
-  font-weight: 600;
   text-decoration: none;
+  font-weight: 600;
   transition: background 0.3s ease;
 }
 
 .apply-btn:hover {
-  background: #006ad1;
+  background: #0070e0;
 }
 
-/* Sidebar info card */
-aside {
-  float: right;
-  width: 30%;
-  margin-left: 2rem;
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-}
-
-aside h2 {
-  font-size: 1.3rem;
-  color: #00264d;
-  margin-bottom: 0.5rem;
-}
-
-aside ul {
-  margin: 0.5rem 0 1rem 1.5rem;
-  line-height: 1.6;
-}
-
-aside a {
-  color: #004b87;
-  text-decoration: none;
-}
-
-aside a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive adjustments */
-@media (max-width: 900px) {
+/* Responsive Layout */
+@media (max-width: 950px) {
   .jobs {
+    flex-direction: column;
+    align-items: center;
     padding: 1rem;
   }
 
-  aside {
-    float: none;
+  .job-container, aside {
     width: 100%;
-    margin: 2rem 0;
   }
 
   .job-card {
-    padding: 1.2rem;
+    padding: 1.5rem;
+  }
+
+  .job-card header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
