@@ -1,11 +1,11 @@
 <!-- jobs.php -->
 <?php
 include 'header.inc';
-include 'settings.inc'; // ensures $conn created
+include 'settings.inc';
 
 $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
 if (!$conn) {
-    die("<p>❌ Database connection failed: " . mysqli_connect_error() . "</p>");
+    die("<p> Database connection failed: " . mysqli_connect_error() . "</p>");
 }
 ?>
 
@@ -41,11 +41,13 @@ if (!$conn) {
         <?php
         $query = "SELECT * FROM jobs ORDER BY job_code ASC";
         $result = mysqli_query($conn, $query);
-
+        echo "<pre>";
+        print_r(mysqli_fetch_all($result, MYSQLI_ASSOC));
+        echo "</pre>";
         if (!$result) {
-            echo "<p>❌ Query failed: " . mysqli_error($conn) . "</p>";
+            echo "<p> Query failed: " . mysqli_error($conn) . "</p>";
         } elseif (mysqli_num_rows($result) === 0) {
-            echo "<p>⚠️ No jobs found in the database.</p>";
+            echo "<p> No jobs found in the database.</p>";
         } else {
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<article class='job' aria-labelledby='ref-{$row['job_code']}'>
