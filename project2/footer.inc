@@ -1,4 +1,4 @@
-<!-- footer uses across all pages -->
+<!-- footer uses across all pages, amy -->
 <footer class="footer" role="contentinfo">
 <p>&copy; <?php echo date('Y'); ?>SDLRC - Digital Careers for the Smart Future</p>
 <a href="mailto:info@companyname.com" style="color:#0645ad;">Contact Us</a>

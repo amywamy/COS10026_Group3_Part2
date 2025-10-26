@@ -1,4 +1,4 @@
-<!-- settings for database connection -->
+<!-- settings for database connection, amy -->
 <?php
 $host = "localhost";
 $user = "root";
