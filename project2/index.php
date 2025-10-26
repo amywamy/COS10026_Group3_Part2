@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="SDLA">
-    <title>SDLRC</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="shortcut icon"
-        href="../images_index/Website_logo.png"
-        type="image/x-icon">
-</head>
+
 
 <body>
 
