@@ -10,6 +10,10 @@ if (!$conn) {
 ?>
 
 <main id="jobs" class="jobs">
+    <style>
+    body { background-color: #fefefe; }
+    </style>
+    
     <a href="#jobs" class="visually-hidden">Skip to main content of this page</a>
     <aside aria-labelledby="join-us">
         <h2 id="join-us">Why should you consider joining us at SDLRC?</h2>

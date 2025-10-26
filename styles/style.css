@@ -11,24 +11,29 @@
 
 .site-header {
   background-color: #fff;
-  padding: 1.5rem 0 0.5rem;
+  padding: 1.2rem 3rem 0.8rem;
   border-bottom: 1px solid #e0e0e0;
-  text-align: center;
 }
 
-/* --- Logo + Text Row --- */
+
 .header-logo-row {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 3rem;
+}
+
+.logo-wrapper {
+    flex-shrink: 0;
 }
 
 .logo-icon {
-  width: 85px;
-  height: 85px;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
   border-radius: 50%;
-  object-fit: cover;
   border: 2px solid #00336620;
   transition: transform 0.3s ease;
 }
@@ -42,6 +47,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  text-align: left;
 }
 
 .header-text h1 {
@@ -49,6 +55,7 @@
   font-weight: 700;
   color: #00264d;
   margin: 0;
+  letter-spacing: 1.2px;
 }
 
 .header-text p {
@@ -116,15 +123,6 @@
 }
 
 /* Job section layout */
-.jobs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  max-width: 1300px;
-  margin: 3rem auto;
-  padding: 1.5rem;
-}
 .visually-hidden {
   position: absolute !important;
   width: 1px;
@@ -136,6 +134,16 @@
   clip-path: inset(50%);
   border: 0;
   white-space: nowrap;
+}
+
+.jobs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1300px;
+  margin: 3rem auto;
+  padding: 1.5rem;
 }
 
 /* Sidebar (Why Join Us) */
