@@ -1,78 +1,178 @@
-/* Styling for Job Page*/
+
 .jobs {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: darkblue;
-    margin: 2rem auto;
-    max-width: 1000px;
-    padding: 1rem;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  color: #1a1a1a;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background: #fafafa;
+}
+
+.jobs h2, .jobs h3 {
+  color: #003366;
+  font-weight: 600;
+}
+
+#open-roles {
+  border-bottom: 3px solid #004b87;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
 }
 
 .job-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
+/* Individual job card */
 .job-card {
-    border: 1.2px solid #ccc;
-    border-radius: 8px;
-    background-color: #fdfdfd;
-    box-shadow: 0 2px 5px rbga(0,0,0,0.09);
-    padding: 1.6rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.8rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* Header area */
+.job-card header {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .job-card h3 {
   font-size: 1.4rem;
-  color: #003366;
+  margin: 0;
+  color: #00264d;
 }
 
 .job-code {
   color: #0073e6;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .badge {
-  background: #0073e6;
+  background: #004b87;
   color: #fff;
-  border-radius: 5px;
-  padding: 0.2rem 0.5rem;
-  font-size: 0.8rem;
+  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+  display: inline-block;
 }
 
+/* Job metadata */
 .job-summary {
-  margin: 0.5rem 0 1rem 0;
   color: #333;
+  margin-top: 0.5rem;
+  line-height: 1.6;
 }
 
 .job-meta {
   list-style: none;
   padding: 0;
-  margin: 0 0 1rem 0;
+  margin: 1rem 0;
+  font-size: 0.95rem;
 }
 
 .job-meta li {
-  margin-bottom: 0.3rem;
+  padding: 0.25rem 0;
 }
 
+.job-meta strong {
+  color: #004b87;
+}
+
+/* Collapsible details */
 details {
-  margin-bottom: 1rem;
+  margin: 0.75rem 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  background: #f9fafc;
 }
 
 details summary {
-  font-weight: bold;
   cursor: pointer;
+  font-weight: 600;
   color: #003366;
 }
 
+details ul, details ol {
+  margin: 0.75rem 0 0 1.5rem;
+  line-height: 1.6;
+}
+
+/* Apply button */
 .apply-btn {
   display: inline-block;
-  background: #0073e6;
-  color: white;
-  padding: 0.6rem 1rem;
-  border-radius: 5px;
+  margin-top: 1rem;
+  background: #004b87;
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
   text-decoration: none;
+  transition: background 0.3s ease;
 }
 
 .apply-btn:hover {
-  background: #005bb5;
+  background: #006ad1;
+}
+
+/* Sidebar info card */
+aside {
+  float: right;
+  width: 30%;
+  margin-left: 2rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+aside h2 {
+  font-size: 1.3rem;
+  color: #00264d;
+  margin-bottom: 0.5rem;
+}
+
+aside ul {
+  margin: 0.5rem 0 1rem 1.5rem;
+  line-height: 1.6;
+}
+
+aside a {
+  color: #004b87;
+  text-decoration: none;
+}
+
+aside a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .jobs {
+    padding: 1rem;
+  }
+
+  aside {
+    float: none;
+    width: 100%;
+    margin: 2rem 0;
+  }
+
+  .job-card {
+    padding: 1.2rem;
+  }
 }
