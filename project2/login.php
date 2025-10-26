@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login Page</title>
     </head>
-    <body>
+    <body id="admin-login">
         <h1>Login in</h1>
         <form method ="POST" action="login.php">
             <label> Username:</label>

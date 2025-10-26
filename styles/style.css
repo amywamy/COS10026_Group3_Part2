@@ -146,7 +146,6 @@
   padding: 1.5rem;
 }
 
-/* Sidebar (Why Join Us) */
 .jobs aside {
   flex: 1 1 300px;
   background: white;
@@ -176,7 +175,6 @@
   text-decoration: underline;
 }
 
-/* Job listings column */
 .job-container {
   flex: 2 1 600px;
   display: flex;
@@ -184,7 +182,6 @@
   gap: 1.5rem;
 }
 
-/* Job card */
 .job-card {
   background: white;
   border-radius: var(--radius);
@@ -198,7 +195,6 @@
   box-shadow: 0 8px 18px rgba(0,0,0,0.08);
 }
 
-/* Job header */
 .job-card header {
   display: flex;
   flex-wrap: wrap;
@@ -229,14 +225,12 @@
   margin-left: 0.5rem;
 }
 
-/* Job description */
 .job-summary {
   color: var(--muted);
   font-size: 0.95rem;
   margin-bottom: 1rem;
 }
 
-/* Job meta */
 .job-meta {
   list-style: none;
   padding: 0;
@@ -307,5 +301,145 @@ details ol {
   .job-card header {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+/* Login page layout */
+#admin-login.body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: 
+    linear-gradient(rgba(0, 38, 77, 0.7), rgba(0, 75, 135, 0.7)),
+    url("../images/login.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1.5s ease-in;
+}
+
+/* Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Login box */
+.login-box {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2.5rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 90%;
+  max-width: 420px;
+}
+
+/* Logo */
+.logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #004b87;
+  margin-bottom: 1rem;
+  transition: transform 0.4s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Headings */
+h1 {
+  color: #00264d;
+  margin-bottom: 0.3rem;
+  font-size: 1.9rem;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+/* Input fields */
+.input-group {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: 600;
+  color: #00264d;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 0.3rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #004b87;
+  box-shadow: 0 0 8px rgba(0, 75, 135, 0.4);
+  outline: none;
+}
+
+/* Button */
+.login-btn {
+  background-color: #00264d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #004b87;
+  transform: scale(1.03);
+}
+
+/* Footer text */
+.footer-text {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 2rem;
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
   }
 }
