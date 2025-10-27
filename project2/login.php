@@ -28,7 +28,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_num_rows($result) == 1) {
         $_SESSION['logged_in'] = true;
         $_SESSION['username'] = $username;
-        header("Location: manage.php");
+        if (strtolower($username) === "admin") {
+            header("Location: manage.php");  
+        } else {
+            header("Location: users.php");
+        }
         exit();
     } else {
         $message = "Invalid username or password.";
