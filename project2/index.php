@@ -1,15 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+            * {
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 7px;
+        }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="SDLA">
-    <title>SDLRC</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="shortcut icon"
-        href="../images_index/Website_logo.png"
-        type="image/x-icon">
+    
+
+        :root {
+        --ink: #222;
+        --muted: #555;
+        --line: #d8d8d8;
+        --brand: #05a;
+        --space: clamp(0.75rem, 1.2vw + 0.25rem, 1.25rem);
+        }
+
+        /*hero section of homepage*/
+    
+        /* This is the background image/banner of the hero section*/
+        .hero {
+            background-image: url("./images/hero.jpg");
+            background-size: cover;
+            background-position: right center;
+            text-align: left;
+            padding: 0px;
+            margin:  0px;
+            min-height: 70vh;
+        }
+        /* hero.jpg is originally from: https://www.elementadvisory.com.au/careers */
+
+        /* These are the texts in the hero section*/
+        .hero_heading{
+            font-size: 2.5rem;
+            line-height:1.2;
+            font-weight: 500;
+            margin: 60px 0 60px;
+            text-align: left;
+           
+        }
+        .hero_text1{
+            font-size: 1.5rem;
+            line-height: 1.2;
+            font-weight: 150;
+            margin: 40px 0 20px;
+            text-align: left;
+            
+        }
+            /* Apply banner */
+        .apply-banner{
+            
+            text-align: center;
+            padding: 20px 0;
+        }   
+        /* Background */
+        .bg-brand-color{
+            background-color: var(--brand);
+            color: #fff;
+        }
+        .bg-ink{
+            background: var(--ink);
+            color: #fff;
+        }
+            
+        /* Testimonials Section */
+        
+        .testimonials{
+            padding:40px 0;
+        }
+        .testimonials .testimonials-heading{
+            width:700px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        .testimonials-grid{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 30px;
+
+        }
+
+        /*card*/
+
+        .card{
+            background: #fff;
+            color: var(--ink);
+            border-radius: 10px;
+            padding: 20px;
+        }
+    </style>
 </head>
+
 
 <body>
 
