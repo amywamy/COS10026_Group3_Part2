@@ -1,25 +1,36 @@
-
 <?php
 session_start();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    require_once "settings.php";
-    $conn = mysqli_connect($host, $user, $pwd, $sql_db);
+require_once "settings.php";
+$conn = mysqli_connect($host, $user, $pwd, $sql_db);
+if (!$conn) {
+    die("<p> Database connection failed: " . mysqli_connect_error() . "</p>");
+}
 
+function sanitize_input($data){
+   return htmlspecialchars(stripslashes(trim($data)));
+}
+
+$message = "";
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $username = sanitize_input($_POST['username']);
     $password = sanitize_input($_POST['password']);
 
-    $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-    $result = mysqli_query($conn, $sql);
+    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = SHA2(?, 256)");
+    $stmt->bind_param("ss", $username, $password);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if(mysqli_num_rows($result) == 1){
         $_SESSION['logged_in'] = true;
         $_SESSION['username'] = $username;
         header("Location: manage.php");
+        exit;
     } else {
         echo "Invalid username or password.";
     }
 }
+$stmt->close();
 
 ?>
 
