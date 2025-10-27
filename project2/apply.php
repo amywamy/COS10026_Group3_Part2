@@ -30,7 +30,6 @@ $selected_job = isset($_GET['job']) ? htmlspecialchars($_GET['job']) : "";
 <?php include "header.inc"; ?>
 <main id="apply-main" class="apply">
     <section class="apply-hero">
-        <img src="../images/apply-banner.jpg" alt="Application Banner" class="apply-banner">
         <h1>Expression of Interest</h1>
         <p class="apply-intro">Complete the form below to submit your application for this exciting opportunity.</p>
     </section>
@@ -66,11 +65,11 @@ $selected_job = isset($_GET['job']) ? htmlspecialchars($_GET['job']) : "";
         <!-- About You -->
         <fieldset>
             <legend>About You</legend>
-            <label for="givenname">Given Name:</label>
-            <input type="text" id="givenname" name="givenname" maxlength="20" placeholder="First Name">
+            <label for="given_name">Given Name:</label>
+            <input type="text" id="given_name" name="given_name" maxlength="20" placeholder="First Name">
 
-            <label for="familyname">Family Name:</label>
-            <input type="text" id="familyname" name="familyname" maxlength="20" placeholder="Last Name">
+            <label for="family_name">Family Name:</label>
+            <input type="text" id="family_name" name="family_name" maxlength="20" placeholder="Last Name">
 
             <label for="date">Date of Birth:</label>
             <input type="date" id="date" name="date">
