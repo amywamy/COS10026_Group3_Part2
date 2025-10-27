@@ -97,7 +97,7 @@ if (!$conn) {
                         <p><strong>Preferable:</strong> " . htmlspecialchars($row['preferable']) . "</p>
                     </details>
 
-                    <p><a class='apply-btn' href='apply.php?job_code=" . urlencode($row['job_code']) . "'>Apply Now</a></p>
+                    <p><a class='apply-btn' href='apply.php?job=" . urlencode($row['job_code']) . "'>Apply Now</a></p>
                 </article>";
             }
         }

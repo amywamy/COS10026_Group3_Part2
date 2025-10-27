@@ -6,8 +6,9 @@
   --muted: #555;
   --bg: #fafafa;
   --radius: 12px;
-  --shadow: 0 4px 8px rgba(0,0,0,0.05);
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
+
 /* Header layout */
 .site-header {
   background-color: #fff;
@@ -26,7 +27,7 @@
 }
 
 .logo-wrapper {
-    flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 .logo-icon {
@@ -192,7 +193,7 @@
 
 .job-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
 }
 
 .job-card header {
@@ -290,7 +291,8 @@ details ol {
     padding: 1rem;
   }
 
-  .job-container, aside {
+  .job-container,
+  aside {
     width: 100%;
   }
 
@@ -307,10 +309,10 @@ details ol {
 /* Login page layout */
 body#admin-login {
   font-family: "Poppins", Arial, sans-serif;
-  background: 
+  background:
     linear-gradient(rgba(0, 30, 60, 0.6), rgba(0, 75, 135, 0.7)),
     url("../images/login.jpg") no-repeat center center fixed;
-    /* login.jpg is originally from: https://au.pinterest.com/pin/7318418140956448/ */
+  /* login.jpg is originally from: https://au.pinterest.com/pin/7318418140956448/ */
   background-size: cover;
   color: #333;
   height: 100vh;
@@ -412,8 +414,15 @@ input:focus {
 
 /* Animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive */
@@ -430,4 +439,54 @@ input:focus {
   h1 {
     font-size: 1.6rem;
   }
+}
+/* Apply page layout */
+.apply-form select,
+.apply-form input,
+.apply-form textarea {
+  width: 100%;
+  max-width: 600px;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+fieldset {
+  margin-bottom: 20px;
+  border: 1px solid #c3c3c3;
+  border-radius: 8px;
+  padding: 15px 25px;
+  background: #f9fafc;
+}
+
+legend {
+  font-weight: 600;
+  color: #002855;
+  font-size: 1.1rem;
+}
+
+.apply-btn {
+  background-color: #003366;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.reset-btn {
+  background-color: #ccc;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }

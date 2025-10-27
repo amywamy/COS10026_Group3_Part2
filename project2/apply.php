@@ -1,3 +1,20 @@
+<?php 
+require_once "settings.php";
+$conn = mysqli_connect($host, $user, $pwd, $sql_db);
+if (!$conn) {
+    die("<p>Database connection failed: " . mysqli_connect_error() . "</p>");
+}
+$jobs = [];
+$query = "SELECT job_code, title FROM jobs ORDER BY job_code ASC";
+$result = mysqli_query($conn, $query);
+if ($result && mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $jobs[] = $row;
+    }
+}
+$selected_job = isset($_GET['job']) ? htmlspecialchars($_GET['job']) : "";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,21 +22,39 @@
     <meta name="description" content="Job Application Form for Expression of Interest (EOI)" />
     <meta name="keywords" content="Job, Application, EOI, Form" />
     <meta name="author" content="Sarah Agate" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
     <title>Apply</title>
 </head>
 <body>
 
 <?php include "header.inc"; ?>
-
 <main id="apply-main" class="apply">
     <section class="apply-hero">
-        <img src="images/apply-banner.jpg" alt="Application Banner" class="apply-banner">
-        <h1>Expression of Interest — Education Technology Research Assistant</h1>
+        <img src="../images/apply-banner.jpg" alt="Application Banner" class="apply-banner">
+        <h1>Expression of Interest</h1>
         <p class="apply-intro">Complete the form below to submit your application for this exciting opportunity.</p>
     </section>
-
+     <?php
+    // Capture job from query string
+    $selected_job = isset($_GET['job']) ? htmlspecialchars($_GET['job']) : "";
+    ?>
     <form method="post" action="process_eoi.php" class="apply-form" novalidate>
+        <!-- Reference Selection Section -->
+        <fieldset>
+            <legend>Position Applying For</legend>
+            <label for="job_select">Select Job Position:</label>
+            <select id="job_select" name="job_select" required>
+                <option value="">-- Select a Position --</option>
+                <?php
+                foreach ($jobs as $job) {
+                    $code = htmlspecialchars($job['job_code']);
+                    $title = htmlspecialchars($job['title']);
+                    $selected = ($selected_job == $code) ? 'selected' : '';
+                    echo "<option value='$code' $selected>$code – $title</option>";
+                }
+                ?>
+            </select>
+        </fieldset>
 
         <!-- Reference Section -->
         <fieldset>
