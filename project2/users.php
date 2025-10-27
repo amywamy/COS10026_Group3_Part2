@@ -15,6 +15,12 @@ $conn = mysqli_connect($host, $user, $pwd, $sql_db);
 if (!$conn) {
     die("<p>Database connection failed: " . mysqli_connect_error() . "</p>");
 }
+$action = $_GET['action'] ?? 'list_all';
+if ($action === 'logout') {
+    session_destroy();
+    header("Location: index.php");
+    exit();
+}
 
 $stmt = $conn->prepare("
     SELECT reference_id, given_name, family_name, email, skills, status
@@ -32,7 +38,102 @@ $result = $stmt->get_result();
 <head>
   <meta charset="UTF-8">
   <title>Your Job Applications | SDLRC</title>
-  <link rel="stylesheet" href="styles/style.css">
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f9fb;
+  margin: 2rem;
+}
+
+h1 {
+  text-align: center;
+  color: #00264d;
+}
+
+.welcome {
+  text-align: center;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+form {
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+th {
+  background-color: #f0f4fa;
+  color: #00264d;
+}
+
+tr:hover {
+  background-color: #f9fbfd;
+}
+
+select,
+input[type="text"],
+input[type="submit"] {
+  padding: 0.4rem;
+  margin: 0.2rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.btn-delete {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: #c9302c;
+}
+
+.btn-update {
+  background-color: #004b87;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-update:hover {
+  background-color: #0069d9;
+}
+.logout-btn {
+      display: block;
+      width: fit-content;
+      margin: 2rem auto;
+      background-color: #00264d;
+      color: #fff;
+      padding: 0.7rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .logout-btn:hover {
+      background-color: #004b87;
+    }
+</style>
 </head>
 <body>
   <div class="application-container">
@@ -71,7 +172,7 @@ $result = $stmt->get_result();
     <?php endif; ?>
 
     <div style="text-align:center;">
-      <a href="index.php" class="logout">Logout</a>
+      <a href="manage.php?action=logout" class="logout-btn">Logout</a>
     </div>
   </div>
 </body>
