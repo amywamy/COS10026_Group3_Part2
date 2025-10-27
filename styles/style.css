@@ -699,3 +699,84 @@ td {
 .logout:hover {
   background-color: #004b87;
 }
+
+/* Manager page layout */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f9fb;
+  margin: 2rem;
+}
+
+h1 {
+  text-align: center;
+  color: #00264d;
+}
+
+.welcome {
+  text-align: center;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+form {
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+th {
+  background-color: #f0f4fa;
+  color: #00264d;
+}
+
+tr:hover {
+  background-color: #f9fbfd;
+}
+
+select,
+input[type="text"],
+input[type="submit"] {
+  padding: 0.4rem;
+  margin: 0.2rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.btn-delete {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: #c9302c;
+}
+
+.btn-update {
+  background-color: #004b87;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-update:hover {
+  background-color: #0069d9;
+}

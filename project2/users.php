@@ -71,7 +71,7 @@ $result = $stmt->get_result();
     <?php endif; ?>
 
     <div style="text-align:center;">
-      <a href="logout.php" class="logout">Logout</a>
+      <a href="index.php" class="logout">Logout</a>
     </div>
   </div>
 </body>
