@@ -556,8 +556,9 @@ textarea:focus {
 }
 
 apply-form {
-    padding: 60px 90px 70px;
+  padding: 60px 90px 70px;
 }
+
 .apply-btn {
   background-color: #0066cc;
   color: #fff;
@@ -609,4 +610,92 @@ apply-form {
   .checkbox-group {
     flex-direction: column;
   }
+}
+
+/* Users login page layout */
+.application-container {
+  max-width: 1000px;
+  margin: 4rem auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+h1 {
+  text-align: center;
+  color: #00264d;
+  margin-bottom: 0.5rem;
+}
+
+p.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th,
+td {
+  padding: 0.9rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f0f4fa;
+  color: #00264d;
+  font-weight: 600;
+}
+
+td {
+  color: #333;
+}
+
+.status {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.status.new {
+  background-color: #007bff;
+}
+
+.status.current {
+  background-color: #f0ad4e;
+}
+
+.status.final {
+  background-color: #5cb85c;
+}
+
+.no-record {
+  text-align: center;
+  color: #555;
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+.logout {
+  display: inline-block;
+  margin-top: 2rem;
+  text-decoration: none;
+  color: white;
+  background-color: #00264d;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.logout:hover {
+  background-color: #004b87;
 }
