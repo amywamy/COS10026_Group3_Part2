@@ -21,13 +21,15 @@
     
         /* This is the background image/banner of the hero section*/
         .hero {
-            background-image: url("./images/hero.jpg");
+            position: relative;
+            background-image: url("../images/hero.jpg");
             background-size: cover;
             background-position: right center;
             text-align: left;
             padding: 0px;
             margin:  0px;
             min-height: 70vh;
+            line-height: 1.6;
         }
         /* hero.jpg is originally from: https://www.elementadvisory.com.au/careers */
 
@@ -46,14 +48,33 @@
             font-weight: 150;
             margin: 40px 0 20px;
             text-align: left;
+            max-width: 60ch;
             
         }
+        .hero_desc, .hero_text1 {
+            max-width: 100ch;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            background: var(--brand);
+            color: #fff;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #003366;
+        }
+
             /* Apply banner */
-        .apply-banner{
-            
+        .apply-banner{ 
+            background-color: var(--brand);
+            color: #fff;
             text-align: center;
-            padding: 20px 0;
-        }   
+            padding: 1.5rem 0;
+        }
+        
         /* Background */
         .bg-brand-color{
             background-color: var(--brand);
@@ -74,11 +95,10 @@
             margin-bottom: 40px;
             text-align: left;
         }
-        .testimonials-grid{
+        .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 30px;
-
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
 
         /*card*/
@@ -117,10 +137,7 @@
                         Explore our job listings and apply today!
                     </p>
                     <div class="hero-buttons">
-                        <a href="#" class="btn btn-primary">
-                            Learn Modern
-                        </a>
-                    </div>
+                    <a href="apply.php" class="btn btn-primary">Apply Now</a>
                 </div>
             </div>
         </section>
