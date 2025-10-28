@@ -11,9 +11,9 @@
 
 /* Header layout */
 .site-header {
-  background-color: #fff;
   padding: 1.2rem 3rem 0.8rem;
   border-bottom: 1px solid #e0e0e0;
+  background-color: #fefefe;
 }
 
 
@@ -24,6 +24,7 @@
   max-width: 1000px;
   margin: 0 auto;
   gap: 3rem;
+  min-height: 150px;
 }
 
 .logo-wrapper {
@@ -31,7 +32,7 @@
 }
 
 .logo-icon {
-  width: 200px;
+  width: 160px;
   height: 200px;
   object-fit: contain;
   border-radius: 50%;
@@ -70,6 +71,7 @@
 .navbar {
   background-color: #00264d;
   padding: 0.8rem 0;
+  margin: 0;
 }
 
 .nav-menu {

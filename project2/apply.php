@@ -28,6 +28,11 @@ $selected_job = isset($_GET['job']) ? htmlspecialchars($_GET['job']) : "";
 
 <?php include "header.inc"; ?>
 <main id="apply-main" class="apply">
+    <style>
+    body { 
+        background-color: #fefefe; 
+    }
+    </style>
     <section class="apply-hero">
         <h1>Expression of Interest</h1>
         <p class="apply-intro">Complete the form below to submit your application for this exciting opportunity.</p>
