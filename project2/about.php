@@ -20,7 +20,6 @@ $result = mysqli_query($conn, $sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - SDLRC Team</title>
-    <link rel="stylesheet" href="css/styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -101,11 +100,11 @@ $result = mysqli_query($conn, $sql);
             </table>
         </section>
     <?php else: ?>
-        <p>No contributions found in the database.</p>
+        <p>No contributions found in the database!</p>
     <?php endif; ?>
 
     <div class="team-photo">
-        <img src="../images/team-photo.jpg" alt="SDLRC team photo">
+        <img src="../project2/images/team-photo.jpg" alt="SDLRC team photo">
         <figcaption>Team SDLRC – Sarah, Amy, Nithya & Sanvidu working collaboratively.</figcaption>
     </div>
 </main>

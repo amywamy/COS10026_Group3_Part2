@@ -102,7 +102,6 @@
   border-radius: 5px;
 }
 
-/* --- Responsive Header --- */
 @media (max-width: 900px) {
   .header-logo-row {
     flex-direction: column;
@@ -311,7 +310,7 @@ body#admin-login {
   font-family: "Poppins", Arial, sans-serif;
   background:
     linear-gradient(rgba(0, 30, 60, 0.6), rgba(0, 75, 135, 0.7)),
-    url("../images/login.jpg") no-repeat center center fixed;
+    url("../project2/images/login.png") no-repeat center center fixed;
   /* login.jpg is originally from: https://au.pinterest.com/pin/7318418140956448/ */
   background-size: cover;
   color: #333;
@@ -425,7 +424,6 @@ input:focus {
   }
 }
 
-/* Responsive */
 @media (max-width: 480px) {
   .login-box {
     padding: 2rem;
@@ -500,7 +498,6 @@ legend {
   padding: 0 10px;
 }
 
-/* ---------- Labels & Inputs ---------- */
 label {
   display: block;
   font-weight: 600;
@@ -537,7 +534,6 @@ textarea:focus {
   margin-top: 12px;
 }
 
-/* ---------- Form Row Layout ---------- */
 .form-row {
   display: flex;
   flex-wrap: wrap;

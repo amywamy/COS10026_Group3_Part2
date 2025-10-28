@@ -49,12 +49,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta name="author" content="Nithya B">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Page | SDLRC</title>
-  <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body id="admin-login">
   <div class="login-container">
     <div class="login-box">
-      <img src="../images/website_logo.png" alt="SDLRC Logo" class="logo">
+      <img src="../project2/images/website_logo.png" alt="SDLRC Logo" class="logo">
       <h1>Login in</h1>
       <p class="subtitle">Welcome Back, Users!</p>
 

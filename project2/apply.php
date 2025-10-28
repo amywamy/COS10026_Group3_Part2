@@ -22,7 +22,6 @@ $selected_job = isset($_GET['job']) ? htmlspecialchars($_GET['job']) : "";
     <meta name="description" content="Job Application Form for Expression of Interest (EOI)" />
     <meta name="keywords" content="Job, Application, EOI, Form" />
     <meta name="author" content="Sarah Agate" />
-    <link rel="stylesheet" href="../styles/style.css" />
     <title>Apply</title>
 </head>
 <body>

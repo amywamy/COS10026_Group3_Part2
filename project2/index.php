@@ -22,7 +22,7 @@
         /* This is the background image/banner of the hero section*/
         .hero {
             position: relative;
-            background-image: url("../images/hero.jpg");
+            background-image: url("../project2/images/hero.jpg");
             background-size: cover;
             background-position: right center;
             text-align: left;

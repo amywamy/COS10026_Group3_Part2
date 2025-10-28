@@ -123,7 +123,6 @@ if (mysqli_stmt_execute($stmt)) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Application Submitted</title>
-        <link rel="stylesheet" href="../styles/style.css">
         <style>
             body {
                 font-family: "Poppins", sans-serif;
