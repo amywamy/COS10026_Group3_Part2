@@ -49,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta name="author" content="Nithya B">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Page | SDLRC</title>
+  <link rel="stylesheet" href="../project2/styles/style.css">
 </head>
 <body id="admin-login">
   <div class="login-container">
