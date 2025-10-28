@@ -24,7 +24,7 @@ $result = mysqli_query($conn, $sql);
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            background-color: #f9fafc;
+            background-color: #fefefe;
             color: #222;
         }
         main {

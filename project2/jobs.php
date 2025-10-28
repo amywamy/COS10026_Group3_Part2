@@ -11,7 +11,9 @@ if (!$conn) {
 
 <main id="jobs" class="jobs">
     <style>
-    body { background-color: #fefefe; }
+    body { 
+        background-color: #fefefe; 
+    }
     </style>
     
     <a href="#jobs" class="visually-hidden">Skip to main content of this page</a>
